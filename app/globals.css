@@ -1,0 +1,88 @@
+:root {
+  --bg: #0b0e10;
+  --panel: #0f1317;
+  --text: #cde4ff;
+  --muted: #7a8da1;
+  --accent: #3ae7b9;
+  --danger: #ff6b6b;
+  --warning: #ffd166;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 20% -20%, #16202a 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #0f1b23;
+  border: 1px solid #1b2b37;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.progress {
+  height: 8px;
+  background: #10171d;
+  border: 1px solid #1b2b37;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress > div { height: 100%; background: var(--accent); width: 0%; transition: width 300ms ease; }
+
+.terminal {
+  background: linear-gradient(180deg, #0e141a 0%, #0b0f13 100%);
+  border: 1px solid #1b2b37;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.term-header {
+  display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid #13212c; color: var(--muted);
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.screen { padding: 16px; height: 56vh; overflow: auto; }
+.line { white-space: pre-wrap; line-height: 1.5; }
+.line.system { color: #7fb4ff; }
+.line.ai { color: var(--text); }
+.line.user { color: #8de88b; }
+.line.glitch { color: var(--warning); text-shadow: 0 0 6px rgba(255,209,102,0.4); }
+.line.memory { color: var(--accent); text-shadow: 0 0 6px rgba(58,231,185,0.4); }
+
+.inputbar {
+  display: flex; gap: 8px; padding: 12px; border-top: 1px solid #13212c; background: #0c1015; border-radius: 0 0 12px 12px;
+}
+.inputbar input {
+  flex: 1; background: #0d141a; color: var(--text); border: 1px solid #1b2b37; border-radius: 8px; padding: 10px 12px;
+}
+.inputbar button {
+  background: var(--accent); color: #001b16; border: none; border-radius: 8px; padding: 10px 14px; font-weight: 700; cursor: pointer;
+}
+.inputbar button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.footer { margin-top: 12px; display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; }
+
+hr.sep { border: none; height: 1px; background: #12202a; margin: 8px 0 12px; }
